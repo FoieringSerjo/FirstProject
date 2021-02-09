@@ -1,0 +1,13 @@
+<%- include('partials/header') %>
+
+    <div class="wrapper">
+        <div class="movie-single">
+                <a href="../searchmovie">&larr; Back</a></br>
+                <img src="<%- movie.image.medium %>" alt="<%- movie.name %>">
+                <h2><%- movie.name %></h2>
+                <p><%- movie.language %></p>
+                <p><%- movie.genres %></p>
+                <p><%- movie.summary %></p>
+                <a href="<%- movie.officialSite %>"><%- movie.officialSite %></a>
+        </div>
+    </div>

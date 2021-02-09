@@ -1,0 +1,18 @@
+<%- include('partials/header') %>
+
+<div class="container mt-5">
+  <a href="/" class="btn btn-lg btn-primary">Go Back</a>
+  <h1>Register Your Account Here</h1>
+  
+  <form action="/registeruser" method="POST" autocomplete="off"> 
+    <div class="mb-3">
+      <label for="rusername" class="form-label">Username</label>
+      <input type="password" name="rusername" placeholder="Enter Your Username" class="form-control" id="rusername" required>
+    </div>
+    <div class="mb-3">
+      <label for="rpassword" class="form-label">Password</label>
+      <input type="password" placeholder="Enter Your Password" name="rpassword" class="form-control" id="rpassword" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Register</button>
+  </form>
+</div>

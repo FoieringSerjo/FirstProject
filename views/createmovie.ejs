@@ -1,0 +1,25 @@
+<%- include('partials/header') %>
+    <div class="container">
+    <form action="/menu" method="POST" autocomplete="off"> 
+        <h1>Create movie page</h1>
+        <div class="mb-3">
+          <label  class="form-label">Name</label>
+          <input type="text" name="name" placeholder="Enter Movie Name" class="form-control">
+        </div>
+        <div class="mb-3">
+          <label  class="form-label">Language</label>
+          <input type="text" name="Lname" placeholder="Enter Movie Language" class="form-control">
+        </div>
+        <div>
+        <select class="form-select mb-3" name="select">
+          <option selected>Genres</option>
+          <option value="Action">Action</option>
+          <option value="Drama">Drama</option>
+          <option value="Comedy">Comedy</option>
+        </select>
+      </div>
+        <button type="submit" class="btn btn-primary">Save</button>
+      </form>
+    </div>
+
+

@@ -1,0 +1,43 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+img {max-width: 100%;}
+h2 {font-size: 1.6rem;}
+
+
+.form-control {
+  width: 50%;
+}
+
+.form-search {
+  padding-left: 43rem;
+}
+
+.wrapper {padding: 0 2rem;}
+
+.movies {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+  grid-gap: 2rem;
+  
+}
+
+.movies_name {
+  text-decoration: none;
+  color: black;
+  background-color: #fff;
+  padding: 20px;
+} 
+
+.movie-single {
+  background-color: #fff;
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 2rem;
+}

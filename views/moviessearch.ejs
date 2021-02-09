@@ -1,0 +1,18 @@
+<%- include('partials/header') %>
+
+
+
+    <div class="wrapper">
+      <%- include('partials/search') %>
+      <a href="../searchmovie">&larr; Back</a></br>
+        <div class="movies">
+          <% movies.forEach(function(movies) { %>
+            <a href="../searchmovie/<%- movies.show.id %>" class="movies_name">
+                <img src="<%- movies.show.image.medium %>" alt="<%- movies.show.name %>">
+                <h2><%- movies.show.name %></h2>
+                <p><%- movies.show.language %></p>
+                <p><%- movies.show.genres %></p>
+                <p><%- movies.show.summary %></p>
+              </a>
+          <% }) %>
+    </div>
