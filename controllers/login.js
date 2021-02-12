@@ -15,7 +15,7 @@ async function logindata(req, res,) {
     req.session.save(err => {
       if(err) {throw err}})
     res.render('adminMenu', {title: 'Admin'})
-  } else if (user.role === 'Basic') {
+  } else {
     req.session.user = user
     req.session.isAuthenticated = true
     req.session.save(err => {
