@@ -1,0 +1,38 @@
+[
+  {
+    "id": "01",
+    "name": "Superman",
+    "language": "EN",
+    "genre": [
+      "Action",
+      "Sub-Genres"
+    ]
+  },
+  {
+    "id": "02",
+    "name": "",
+    "language": "",
+    "genre": [
+      "Genres",
+      "Sub-Genres"
+    ]
+  },
+  {
+    "id": "",
+    "name": "",
+    "language": "",
+    "genre": [
+      "Genres",
+      "Sub-Genres"
+    ]
+  },
+  {
+    "id": "",
+    "name": "ser",
+    "language": "",
+    "genre": [
+      "Action",
+      "Sub-Genres"
+    ]
+  }
+]

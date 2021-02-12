@@ -3,17 +3,17 @@ const axios = require('axios');
 
 
 async function menu(req, res,) {
-  res.render('menu', {title: 'Menu'});
+  res.render('menu', { title: 'Menu' });
 }
 
 async function createmovie(req, res) {
-  res.render('createmovie', {title: 'Createmovie'})
+  res.render('createmovie', { title: 'Createmovie' })
 }
 
 async function searchmovie(req, res) {
   try {
     const moviesAPI = await axios.get('https://api.tvmaze.com/shows');
-    res.render('searchmovie', {title: 'Searchmovie', movies: moviesAPI.data });
+    res.render('searchmovie', { title: 'Searchmovie', movies: moviesAPI.data });
   } catch (err) {
     if (err.response) {
       console.log(err.response.data)
@@ -30,9 +30,8 @@ async function movieByID(req, res) {
   let movieID = req.params.id;
   try {
     const moviesAPI = await axios.get(`https://api.tvmaze.com/shows/${movieID}`);
-    res.render('movieSingle', {title: 'Searchmovie-id', movie: moviesAPI.data });
-  } 
-  catch (err) {
+    res.render('movieSingle', { title: 'Searchmovie-id', movie: moviesAPI.data });
+  } catch (err) {
     if (err.response) {
       res.render('movieSingle', { movie: null })
       console.log(err.response.data)
@@ -49,14 +48,10 @@ async function movieByID(req, res) {
 
 async function movieSearchBar(req, res) {
   let search = req.body.search
-  let input = req.body.input
-  console.log(input)
   try {
-    const moviesAPI = await axios.get(` http://api.tvmaze.com/search/shows?q=${search}`);
-    res.render('moviessearch', {title: 'Searchmovie', movies: moviesAPI.data });
-    
-  } 
-  catch (err) {
+    const moviesAPI = await axios.get(`http://api.tvmaze.com/search/shows?q=${search}`);
+    res.render('moviessearch', { title: 'Searchmovie', movies: moviesAPI.data });
+  } catch (err) {
     if (err.response) {
       res.render('moviessearch', { movies: null })
       console.log(err.response.data)
@@ -73,16 +68,18 @@ async function movieSearchBar(req, res) {
 
 async function addmovie(req, res) {
   let obj = {
+    id: '',
     name: req.body.name,
-    language: req.body.Lname,
-    genre: req.body.select
-};
-await moviesBL.createMovie(obj);
-// const movie = new Movie(req.body.name, req.body.genre)
-// await movie.save()
-
-res.render('menu', {title: 'Menu'});
+    language: req.body.language,
+    genre: [req.body.genres, req.body.genres1]
+  };
+  try {
+    await moviesBL.createMovie(obj);
+    res.render('menu', { title: 'Menu' });
+  } catch (error) {
+    throw error
+  }
 }
 
-module.exports = {menu, createmovie, searchmovie, movieByID, addmovie, movieSearchBar}
+module.exports = { menu, createmovie, searchmovie, movieByID, addmovie, movieSearchBar }
 

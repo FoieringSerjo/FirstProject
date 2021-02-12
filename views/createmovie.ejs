@@ -8,14 +8,30 @@
         </div>
         <div class="mb-3">
           <label  class="form-label">Language</label>
-          <input type="text" name="Lname" placeholder="Enter Movie Language" class="form-control">
+          <input type="text" name="language" placeholder="Enter Movie Language" class="form-control">
         </div>
         <div>
-        <select class="form-select mb-3" name="select">
+        <label  class="genres">Genres</label>
+        <select class="form-select mb-3" name="genres">
           <option selected>Genres</option>
           <option value="Action">Action</option>
           <option value="Drama">Drama</option>
           <option value="Comedy">Comedy</option>
+          <option value="Fantasy">Fantasy</option>
+          <option value="Horror">Horror</option>
+          <option value="Mystery">Mystery</option>
+          <option value="Romance">Romance</option>
+          <option value="Thriller">Thriller</option>
+        </select>
+
+        <select class="form-select mb-3" name="genres1">
+          <option selected>Sub-Genres</option>
+          <option value="War and Military Action">War and Military Action</option>
+          <option value="Spy and Espionage Action">Spy and Espionage Action</option>
+          <option value="Slapstick Comedy">Slapstick Comedy</option>
+          <option value="Black Comedy">Black Comedy</option>
+          <option value="Zombie Horror">Zombie Horror</option>
+          <option value="Space Trave">Space Trave</option>
         </select>
       </div>
         <button type="submit" class="btn btn-primary">Save</button>

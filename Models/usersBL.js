@@ -1,68 +1,37 @@
 const fs = require('fs');
 const path = require('path');
+const util = require('util');
+const filePath = path.join(__dirname, '..', 'Data', 'users.json');
 
-
-// const createUser = async function(obj) {
-//   try
-//   {
-//       let result = await usersDAL.writeToFile(obj);
-//       return result
-//   }
-//   catch(err)
-//   {
-//       return(err)
-//   }
-// }
-
-// module.exports = {createUser}
+const writeFile = util.promisify(fs.writeFile);
+const readFile = util.promisify(fs.readFile);
 
 class User {
-  constructor(username, password) {
-    this.username = username;
-    this.password = password;
+  constructor({ id, username, password, role }) {
+    this.id = id,
+    this.username = username,
+    this.password = password,
+    this.role = role
   }
-
 
   toJSON() {
     return {
       username: this.username,
       password: this.password,
+      id: this.id,
+      role: this.role
     }
   }
 
-    async save() {
+  async save() {
+
     const users = await User.getAll()
     users.push(this.toJSON())
-
-    return new Promise((resolve, reject) => {
-      fs.writeFile(
-        path.join(__dirname, '..', 'DALS', 'users.json'),
-        JSON.stringify(users),
-        (err) => {
-          if (err) {
-            reject(err)
-          } else {
-            resolve()
-          }
-        }
-      )
-    })
-  } 
-
-  static getAll() {
-    return new Promise((resolve, reject) => {
-      fs.readFile(
-        path.join(__dirname, '..', 'DALS', 'users.json'),
-        (err, content) => {
-          if (err) {
-            reject(err)
-          } else {
-            resolve(JSON.parse(content))
-          }
-        }
-      )
-    })
+    await writeFile(filePath, JSON.stringify(users))
   }
+
+  static async getAll() { return JSON.parse(await readFile(filePath)) }
+
 }
 
 module.exports = User;

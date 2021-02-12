@@ -3,7 +3,11 @@
     <div class="wrapper">
         <div class="movie-single">
                 <a href="../searchmovie">&larr; Back</a></br>
-                <img src="<%- movie.image.medium %>" alt="<%- movie.name %>">
+                <% if(movie.image != null) { %>
+                    <img src="<%- movie.image.medium %>" alt="<%- movie.name %>">
+                  <% } else { %>
+                    "No image"
+                  <% } %>
                 <h2><%- movie.name %></h2>
                 <p><%- movie.language %></p>
                 <p><%- movie.genres %></p>

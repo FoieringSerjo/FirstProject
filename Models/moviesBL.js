@@ -1,68 +1,35 @@
 const fs = require('fs');
 const path = require('path');
-const moviesDAL = require('../DALS/moviesDAL');
+const moviesDAL = require('../DAL/moviesDAL');
+const util = require('util');
+const axios = require('axios');
 
-const createMovie = async function(obj) {
+const filePath = path.join(__dirname, '..', 'Data', 'NewMovies.json');
+
+const getMoviesWebData = async function() {
+    let data = await axios.get('https://api.tvmaze.com/shows')
+    let finalData = [];
+
+    let moviesArr = data.data;
+
+    let moviesId = moviesArr.map(x => x.id)
+    finalData.push(moviesId)
+    return console.log(finalData)
+}
+
+
+
+const readFile = util.promisify(fs.readFile);
+const createMovie = async function (obj) {
     try {
-        let result = await moviesDAL.writeFile(obj);
+        let currrentMovies = JSON.parse(await readFile(filePath))
+        currrentMovies.push(obj);
+        let result = await moviesDAL.writeFile(currrentMovies);
         return result
     } catch (err) {
-        return (err);
+        console.log(err)
+        throw err
     }
-
 }
 
 module.exports = { createMovie }
-
-
-// class Movie {
-//     constructor(name, genre) {
-//       this.name = name;
-//       this.genre = genre;
-//     }
-  
-  
-//     toJSON() {
-//       return {
-//         name: this.name,
-//         genre: this.genre
-//       }
-//     }
-  
-//       async save() {
-//       const movies = await Movie.getAll()
-//       movies.push(this.toJSON())
-  
-//       return new Promise((resolve, reject) => {
-//         fs.writeFile(
-//           path.join(__dirname, '..', 'DALS', 'movies.json'),
-//           JSON.stringify(movies),
-//           (err) => {
-//             if (err) {
-//               reject(err)
-//             } else {
-//               resolve()
-//             }
-//           }
-//         )
-//       })
-//     }
-
-//     static getAll() {
-//         return new Promise((resolve, reject) => {
-//           fs.readFile(
-//             path.join(__dirname, '..', 'DALS', 'movies.json'),
-//             'utf-8',
-//             (err, content) => {
-//               if (err) {
-//                 reject(err)
-//               } else {
-//                 resolve(JSON.parse(content))
-//               }
-//             }
-//           )
-//         })
-//       }
-// }
-
-// module.exports = Movie;
