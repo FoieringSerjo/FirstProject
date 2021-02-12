@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 const util = require('util');
-const filePath = path.join(__dirname, '..', 'Data', 'users.json');
+const filePath = path.join(__dirname, '..', 'Data', 'Users.json');
 
 const writeFile = util.promisify(fs.writeFile);
 const readFile = util.promisify(fs.readFile);

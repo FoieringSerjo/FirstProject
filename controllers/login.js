@@ -22,7 +22,6 @@ async function logindata(req, res,) {
       if(err) {throw err}})
     res.redirect('../menu')
   }
-
 }
 
 module.exports = {login, logindata}

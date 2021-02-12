@@ -1,16 +1,7 @@
 [
   {
     "id": "",
-    "name": "zxcxzc",
-    "language": "xzczxc",
-    "genre": [
-      "Action",
-      "Sub-Genres"
-    ]
-  },
-  {
-    "id": "",
-    "name": "Sup",
+    "name": "Super",
     "language": "EN",
     "genre": [
       "Action",
@@ -19,128 +10,11 @@
   },
   {
     "id": "",
-    "name": "X",
+    "name": "Super",
     "language": "EN",
     "genre": [
-      "Comedy",
-      "Sub-Genres"
-    ]
-  },
-  {
-    "id": "",
-    "name": "",
-    "language": "",
-    "genre": [
-      "Genres",
-      "Sub-Genres"
-    ]
-  },
-  {
-    "id": "",
-    "name": "",
-    "language": "123123",
-    "genre": [
-      "Genres",
-      "Sub-Genres"
-    ]
-  },
-  {
-    "id": "",
-    "name": "hjhjhj",
-    "language": "hjhjhj",
-    "genre": [
-      "Genres",
-      "Sub-Genres"
-    ]
-  },
-  {
-    "id": "",
-    "name": "",
-    "language": "",
-    "genre": [
-      "Genres",
-      "Sub-Genres"
-    ]
-  },
-  {
-    "id": "",
-    "name": "",
-    "language": "",
-    "genre": [
-      "Genres",
-      "Sub-Genres"
-    ]
-  },
-  {
-    "id": "",
-    "name": "",
-    "language": "",
-    "genre": [
-      "Genres",
-      "Sub-Genres"
-    ]
-  },
-  {
-    "id": "",
-    "name": "",
-    "language": "",
-    "genre": [
-      "Genres",
-      "Sub-Genres"
-    ]
-  },
-  {
-    "id": "",
-    "name": "",
-    "language": "",
-    "genre": [
-      "Genres",
-      "Sub-Genres"
-    ]
-  },
-  {
-    "id": "",
-    "name": "",
-    "language": "",
-    "genre": [
-      "Genres",
-      "Sub-Genres"
-    ]
-  },
-  {
-    "id": "",
-    "name": "",
-    "language": "",
-    "genre": [
-      "Genres",
-      "Sub-Genres"
-    ]
-  },
-  {
-    "id": "",
-    "name": "",
-    "language": "",
-    "genre": [
-      "Genres",
-      "Sub-Genres"
-    ]
-  },
-  {
-    "id": "",
-    "name": "",
-    "language": "",
-    "genre": [
-      "Genres",
-      "Sub-Genres"
-    ]
-  },
-  {
-    "id": "",
-    "name": "",
-    "language": "",
-    "genre": [
-      "Genres",
-      "Sub-Genres"
+      "Action",
+      "War and Military Action"
     ]
   }
 ]
