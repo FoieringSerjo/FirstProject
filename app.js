@@ -9,9 +9,6 @@ const bodyParser = require('body-parser');
 const variables = require('./middleware/variables');
 
 
-
-
-
 const mainRouter = require('./routes/main');
 const menuRouter = require('./routes/menu');
 

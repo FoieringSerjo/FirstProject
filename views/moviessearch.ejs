@@ -1,7 +1,7 @@
 <%- include('partials/header') %>
 <div class="wrapper">
   <%- include('partials/search') %>
-    <a href="/movies">&larr; Back to Search</a></br>
+    <a href="movies">&larr; Back to Search</a></br>
       <div class="movies">
         <% movies.forEach(function(movies) { %>
           <a href="movies/<%- movies.show.id %>" class="movies_name">
