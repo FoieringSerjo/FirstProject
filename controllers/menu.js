@@ -7,13 +7,13 @@ async function menu(req, res,) {
 }
 
 async function createmovie(req, res) {
-  res.render('createmovie', { title: 'Createmovie' })
+  res.render('createmovie', { title: 'Form Movie Page' })
 }
 
-async function searchmovie(req, res) {
+async function movies(req, res) {
   try {
     const moviesAPI = await axios.get('https://api.tvmaze.com/shows');
-    res.render('searchmovie', { title: 'Searchmovie', movies: moviesAPI.data });
+    res.render('Movies', { title: 'Movies', movies: moviesAPI.data });
   } catch (err) {
     if (err.response) {
       console.log(err.response.data)
@@ -30,7 +30,7 @@ async function movieByID(req, res) {
   let movieID = req.params.id;
   try {
     const moviesAPI = await axios.get(`https://api.tvmaze.com/shows/${movieID}`);
-    res.render('movieSingle', { title: 'Searchmovie-id', movie: moviesAPI.data });
+    res.render('movieSingle', { title: 'Movie', movie: moviesAPI.data });
   } catch (err) {
     if (err.response) {
       res.render('movieSingle', { movie: null })
@@ -50,7 +50,7 @@ async function movieSearchBar(req, res) {
   let search = req.body.search
   try {
     const moviesAPI = await axios.get(`http://api.tvmaze.com/search/shows?q=${search}`);
-    res.render('moviessearch', { title: 'Searchmovie', movies: moviesAPI.data });
+    res.render('moviessearch', { title: 'Movies', movies: moviesAPI.data });
   } catch (err) {
     if (err.response) {
       res.render('moviessearch', { movies: null })
@@ -75,11 +75,11 @@ async function addmovie(req, res) {
   };
   try {
     await moviesBL.createMovie(obj);
-    res.render('menu', { title: 'Menu' });
+    res.redirect('menu');
   } catch (error) {
     throw error
   }
 }
 
-module.exports = { menu, createmovie, searchmovie, movieByID, addmovie, movieSearchBar }
+module.exports = { menu, createmovie, movies, movieByID, addmovie, movieSearchBar }
 

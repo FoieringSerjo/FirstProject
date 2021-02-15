@@ -1,10 +1,10 @@
 <%- include('partials/header') %>
 <div class="wrapper">
   <%- include('partials/search') %>
-    <a href="../searchmovie">&larr; Back to Search</a></br>
+    <a href="/movies">&larr; Back to Search</a></br>
       <div class="movies">
         <% movies.forEach(function(movies) { %>
-          <a href="../searchmovie/<%- movies.show.id %>" class="movies_name">
+          <a href="movies/<%- movies.show.id %>" class="movies_name">
             <% if(movies.show.image != null) { %>
               <img src="<%- movies.show.image.medium %>" alt="<%- movies.show.name %>">
             <% } else { %>

@@ -1,7 +1,10 @@
 <%- include('partials/header') %>
     <div class="container">
+      
     <form action="/menu" method="POST" autocomplete="off"> 
+      <a href="/menu" class="btn btn-sm btn-primary">Go Back</a>
         <h1>Create movie page</h1>
+        
         <div class="mb-3">
           <label  class="form-label">Name</label>
           <input type="text" name="name" placeholder="Enter Movie Name" class="form-control">
@@ -35,6 +38,7 @@
         </select>
       </div>
         <button type="submit" class="btn btn-primary">Save</button>
+        <button type="reset" class="btn btn-secondary">Reset</button>
       </form>
     </div>
 

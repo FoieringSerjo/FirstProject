@@ -1,11 +1,20 @@
 [
   {
     "id": "",
-    "name": "Super",
+    "name": "",
+    "language": "",
+    "genre": [
+      "Genres",
+      "Sub-Genres"
+    ]
+  },
+  {
+    "id": "",
+    "name": "Superman",
     "language": "EN",
     "genre": [
       "Action",
-      "War and Military Action"
+      "Sub-Genres"
     ]
   }
 ]

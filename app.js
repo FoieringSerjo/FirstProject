@@ -12,8 +12,7 @@ const variables = require('./middleware/variables');
 
 
 
-const indexRouter = require('./routes/index');
-const loginRouter = require('./routes/login');
+const mainRouter = require('./routes/main');
 const menuRouter = require('./routes/menu');
 
 
@@ -46,12 +45,8 @@ app.use(session({
 }))
 app.use(variables)
 
-app.use('/', indexRouter);
-app.use('/register', indexRouter)
-app.use('/login', loginRouter);
+app.use('/', mainRouter);
 app.use('/menu', menuRouter);
-app.use('/createmovie', menuRouter);
-app.use('/searchmovie', menuRouter);
 
 
 // catch 404 and forward to error handler

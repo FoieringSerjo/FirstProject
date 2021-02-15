@@ -8,10 +8,9 @@ async function authBasic(req, res, next) {
 
 async function auth(req, res, next) {
   if(req.session.user) {
-    res.redirect('/menu')
-  } else {
-    next()
-  }
+    return res.redirect('/menu')
+  } 
+  next()
 }
 
 module.exports = { authBasic, auth }
