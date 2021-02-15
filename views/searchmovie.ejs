@@ -3,6 +3,7 @@
 <%- include('partials/search') %>
 <div class="wrapper">
 <div class="movies">
+        
         <% movies.forEach(function(movies) { %>
                 <a href="searchmovie/<%- movies.id %>" class="movies_name">
                 <% if(movies.image != null) { %>

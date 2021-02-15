@@ -1,1 +1,1 @@
-[{"username":"Serj","password":"1234","id":"89ebdb6e-4712-49cd-88e7-c86907e699e8","role":"Admin"},{"username":"Se","password":"12","id":"8e236c76-1782-4357-af27-43866c461c75","role":"Basic"},{"username":"se","password":"1212","id":"751c104d-e1d1-4bd3-be2e-ce76464eebdb","role":"Basic"}]
+[{"username":"Serj","password":"1234","role":"Admin"},{"username":"zx","password":"123123","role":"Basic","credits":10,"date":"2021-02-13T16:40:34.958Z"}]

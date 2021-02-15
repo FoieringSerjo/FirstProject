@@ -12,11 +12,11 @@ const getMoviesWebData = async function() {
 
     let moviesArr = data.data;
 
-    let moviesId = moviesArr.map(x => x.id)
+    let moviesId = moviesArr.map(x =>'id: ' + x.id)
     finalData.push(moviesId)
-    return console.log(finalData)
+    return finalData
 }
-
+getMoviesWebData()
 
 
 const readFile = util.promisify(fs.readFile);
@@ -25,7 +25,7 @@ const createMovie = async function (obj) {
         let currrentMovies = JSON.parse(await readFile(filePath))
         currrentMovies.push(obj);
         let result = await moviesDAL.writeFile(currrentMovies);
-        return result
+        return consol.log(result.id)
     } catch (err) {
         console.log(err)
         throw err

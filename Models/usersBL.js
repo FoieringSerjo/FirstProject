@@ -7,19 +7,21 @@ const writeFile = util.promisify(fs.writeFile);
 const readFile = util.promisify(fs.readFile);
 
 class User {
-  constructor({ id, username, password, role }) {
-    this.id = id,
+  constructor({ username, password, role, credits = 10}) {
     this.username = username,
     this.password = password,
-    this.role = role
+    this.role = role,
+    this.credits = credits
+    this.date = new Date()
   }
 
   toJSON() {
     return {
       username: this.username,
       password: this.password,
-      id: this.id,
-      role: this.role
+      role: this.role,
+      credits: this.credits,
+      date: this.date
     }
   }
 
