@@ -12,7 +12,7 @@ async function createmovie(req, res) {
 
 async function movies(req, res) {
   try {
-    const moviesAPI = await axios.get('https://api.tvmaze.com/shows');
+    const moviesAPI = await axios.get('https://api.tvmaze.com/shows?page=0');
     res.render('Movies', { title: 'Movies', movies: moviesAPI.data });
   } catch (err) {
     if (err.response) {

@@ -42,14 +42,15 @@ async function logindata(req, res,) {
   const user = users.find(x => x.username === username && x.password === password)
   if (user) {
     if (user.role === 'Admin') {
-      req.session.user = user
+      res.locals.user = user
       req.session.isAuthenticated = true
       req.session.save(err => {
         if (err) { throw err }
       })
       res.redirect('menu')
     } else {
-      req.session.user = user
+      res.locals.user = user
+      console.log(res.locals.user)
       req.session.isAuthenticated = true
       req.session.save(err => {
         if (err) { throw err }
